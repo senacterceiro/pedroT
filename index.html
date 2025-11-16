@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta
+      name="author"
+      content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
+    />
+    <meta name="generator" content="Astro v5.13.2" />
+    <title>Ernani Braga</title>
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/5.3/examples/album/"
+    />
+    <script src="assets/js/color-modes.js"></script>
+    <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/dist/css/meu_estilo.css" rel="stylesheet" />
+    <meta name="theme-color" content="#712cf9" />
+  </head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path
+          d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"
+        ></path>
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path
+          d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+        ></path>
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path
+          d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"
+        ></path>
+        <path
+          d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"
+        ></path>
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path
+          d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"
+        ></path>
+      </symbol>
+    </svg>
+    <div
+      class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle"
+    >
+      <button
+        class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
+        id="bd-theme"
+        type="button"
+        aria-expanded="false"
+        data-bs-toggle="dropdown"
+        aria-label="Toggle theme (auto)"
+      >
+        <svg class="bi my-1 theme-icon-active" aria-hidden="true">
+          <use href="#circle-half"></use>
+        </svg>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+      </button>
+      <ul
+        class="dropdown-menu dropdown-menu-end shadow"
+        aria-labelledby="bd-theme-text"
+      >
+        <li>
+          <button
+            type="button"
+            class="dropdown-item d-flex align-items-center"
+            data-bs-theme-value="light"
+            aria-pressed="false"
+          >
+            <svg class="bi me-2 opacity-50" aria-hidden="true">
+              <use href="#sun-fill"></use>
+            </svg>
+            Light
+            <svg class="bi ms-auto d-none" aria-hidden="true">
+              <use href="#check2"></use>
+            </svg>
+          </button>
+        </li>
+        <li>
+          <button
+            type="button"
+            class="dropdown-item d-flex align-items-center"
+            data-bs-theme-value="dark"
+            aria-pressed="false"
+          >
+            <svg class="bi me-2 opacity-50" aria-hidden="true">
+              <use href="#moon-stars-fill"></use>
+            </svg>
+            Dark
+            <svg class="bi ms-auto d-none" aria-hidden="true">
+              <use href="#check2"></use>
+            </svg>
+          </button>
+        </li>
+        <li>
+          <button
+            type="button"
+            class="dropdown-item d-flex align-items-center active"
+            data-bs-theme-value="auto"
+            aria-pressed="true"
+          >
+            <svg class="bi me-2 opacity-50" aria-hidden="true">
+              <use href="#circle-half"></use>
+            </svg>
+            Auto
+            <svg class="bi ms-auto d-none" aria-hidden="true">
+              <use href="#check2"></use>
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+    <main>
+      <section class="py-5 text-center container">
+        <div class="row pb-lg-3">
+          <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light">Ernani Braga (1888–1948)</h1>
+            <p class="lead text-body-secondary">
+              Ernani Braga (nascido Hernani da Costa Braga) foi um compositor, pianista e maestro brasileiro, representante da segunda geração de nacionalistas da música erudita no país. Nascido no Rio de Janeiro em 10 de janeiro de 1888, iniciou-se na música com a irmã Zaíra e, ainda jovem, regia cânticos no Colégio Salesiano de Santa Rosa, em Niterói.
+              Estudou no Instituto Nacional de Música, onde teve como mestres Arthur Napoleão, Alberto Nepomuceno e Antônio Francisco Braga — este último, seu grande mentor e amigo. Em 1913, aperfeiçoou-se em Paris, convivendo com figuras como Vincent d’Indy e o pianista Lucien Wurmern, além de apresentar-se na Salle Pleyel.
+              De volta ao Brasil, graduou-se com distinção e tornou-se professor do Instituto Nacional de Música. Lecionou também no Conservatório Dramático e Musical de São Paulo e foi um dos fundadores do Conservatório Pernambucano de Música. Entre seus alunos destacam-se Camargo Guarnieri e Adolpho Tabacow.
+              Braga participou da Semana de Arte Moderna de 1922 como intérprete de obras de Villa-Lobos e teve papel importante na difusão da música brasileira. Viveu em várias cidades do país e também em Buenos Aires, atuando na divulgação cultural. Faleceu em São Paulo em 17 de setembro de 1948.
+            </p>
+          </div>
+        </div>
+      </section>
+      <h3 class="fw-light pb-3 text-center">Algumas Obras do Autor</h3>
+      <div class="album py-5 bg-body-tertiary">
+        <div class="container">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <div class="col">
+              <div class="card shadow-sm">
+                <div class="d-flex justify-content-center" style="height: 255px">
+                  <img class="img-fluid" src="assets/images/hernani_braga_image.png">
+                </div>
+                <div class="card-body" style="height: 150px;">
+                  <p class="card-text">
+                      Ernani Braga (1888–1948) foi compositor, pianista e maestro brasileiro, 
+                      da segunda geração de nacionalistas integrando folclore à música erudita.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <div class="d-flex justify-content-center" style="height: 255px">
+                  <img class="img-fluid" src="assets/images/capim_de_pranta.png">
+                </div>
+                <div class="card-body" style="height: 150px;">
+                  <p class="card-text">
+                      Capim di Pranta: Fala popular do sertão, com humor e simplicidade, 
+                      e descreve de forma poética a relação da pessoa com o ambiente rural.
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <a href="https://www.youtube.com/watch?v=K-bqmLdFk0o&list=RDK-bqmLdFk0o&start_radio=1" target="_blank">
+                        <button
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary"
+                        >
+                          Veja no youtube
+                        </button>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <div class="d-flex justify-content-center" style="height: 255px">
+                  <img class="img-fluid" src="assets/images/engenho_novo.jpeg">
+                </div>
+                <div class="card-body" style="height: 150px;">
+                  <p class="card-text">
+                      Engenho Novo: O “engenho novo” é literalmente o engenho de açúcar, 
+                      típico do Nordeste colonial e ainda presente na cultura popular.
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <a href="https://www.youtube.com/watch?v=WOWn9tWf9ps&list=RDWOWn9tWf9ps&start_radio=1" target="_blank">
+                        <button
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary"
+                        >
+                          Veja no youtube
+                        </button>
+                      </a>
+                    </div>
+                  </div>                  
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <div class="d-flex justify-content-center" style="height: 255px">
+                  <img class="img-fluid" src="assets/images/nigue_nigue_ninhas.jpeg">
+                </div>
+                <div class="card-body" style="height: 150px;">
+                  <p class="card-text">
+                      Nigue-Nigue-Ninhas: Como que cantigas infantis nordestinas sobre brincadeiras. 
+                      Rítimos simples, repetitivos, e seu nome imita sons típicos dos cantos.
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <a href="https://www.youtube.com/watch?v=gtgBLuiXC2E&list=RDgtgBLuiXC2E&start_radio=1" target="_blank">
+                        <button
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary"
+                        >
+                          Veja no youtube
+                        </button>
+                      </a>
+                    </div>
+                  </div>                  
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <div class="d-flex justify-content-center" style="height: 255px">
+                  <img class="img-fluid" src="assets/images/kimba.png">
+                </div>
+                <div class="card-body" style="height: 150px;">
+                  <p class="card-text">
+                      O Kimbá: Canção com ritmo afro-brasileiro, usando repetições e sons onomatopaicos 
+                      para criar um clima forte e percussivo inspirado no folclore nordestino.
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <a href="https://www.youtube.com/watch?v=3FuwAkgSHqE&list=RD3FuwAkgSHqE&start_radio=1" target="_blank">
+                        <button
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary"
+                        >
+                          Veja no youtube
+                        </button>
+                      </a>
+                    </div>
+                  </div>                  
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <div class="d-flex justify-content-center" style="height: 255px">
+                  <img class="img-fluid" src="assets/images/sao_joao_da_rao.png">
+                </div>
+                <div class="card-body" style="height: 150px;">
+                  <p class="card-text">
+                      São João-dâ-Rão: Ela tem ritmo animado, linguagem popular e clima festivo, 
+                      representando a tradição do São João Nordestino dentro do folclore brasileiro.
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <a href="https://www.youtube.com/watch?v=I-BC8I31oqQ&list=RDI-BC8I31oqQ&start_radio=1" target="_blank">
+                        <button
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary"
+                        >
+                          Veja no youtube
+                        </button>
+                      </a>
+                    </div>
+                  </div>                  
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <div class="d-flex justify-content-center" style="height: 255px">
+                  <img class="img-fluid" src="assets/images/xango.jpeg">
+                </div>
+                <div class="card-body" style="height: 150px;">
+                  <p class="card-text">
+                      Xangô: Canção com ritmo forte, repetições e clima ritual, 
+                      ela evoca a energia do orixá Xangô e destaca a influência africana na música do Nordeste.
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <a href="https://www.youtube.com/watch?v=Lr1rUqFVM6c&list=RDLr1rUqFVM6c&start_radio=1" target="_blank">
+                        <button
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary"
+                        >
+                          Veja no youtube
+                        </button>
+                      </a>
+                    </div>
+                  </div>                  
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <div class="d-flex justify-content-center" style="height: 255px">
+                  <img class="img-fluid" src="assets/images/minueto_melacolico.png">
+                </div>
+                <div class="card-body" style="height: 150px;">
+                  <p class="card-text">
+                      Minueto Melancólico: Peça para piano que combina a forma clássica do minueto 
+                      com um clima suave e nostálgico.
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <a href="https://www.youtube.com/watch?v=qxRW-oWNh3I&list=RDqxRW-oWNh3I&start_radio=1" target="_blank">
+                        <button
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary"
+                        >
+                          Veja no youtube
+                        </button>
+                      </a>
+                    </div>
+                  </div>                  
+                </div>
+              </div>
+            </div>            
+            <div class="col">
+              <div class="card shadow-sm">
+                <div class="d-flex justify-content-center" style="height: 255px">
+                  <img class="img-fluid" src="assets/images/aboio.png">
+                </div>
+                <div class="card-body" style="height: 150px;">
+                  <p class="card-text">
+                      Aboio: Inspirada no canto dos vaqueiros nordestinos. Com melodia livre e expressiva, 
+                      recria o ambiente do sertão e o chamado tradicional para conduzir o gado.
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <a href="https://www.youtube.com/watch?v=QqkpvMr9Bdg&list=RDQqkpvMr9Bdg&start_radio=1" target="_blank">
+                        <button
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary"
+                        >
+                          Veja no youtube
+                        </button>
+                      </a>
+                    </div>
+                  </div>                  
+                </div>
+              </div>
+            </div>   
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="text-body-secondary py-5">
+      <div class="container">
+        <p class="float-end mb-1"><a href="#">Início</a></p>
+        <div class="row align-items-center">
+          <div class="col-sm-2">
+            <img src="assets/images/senac_logo.png" class="img-thumbnail" alt="...">
+          </div>
+          <div class="col-sm">
+            <p class="mb-1">
+              Este site foi desenvolvido por Pedro Trindade usando &copy; Bootstrap
+            </p>
+            <p class="mb-0">
+              Projeto feito para disciplina técnica do <a href="https://www.senacrs.com.br/home" target="_blank">Senac</a>.
+            </p>
+          </div>  
+        </div>
+      </div>
+    </footer>
+    <script
+      src="assets/dist/js/bootstrap.bundle.min.js"
+      class="astro-vvvwv3sm"
+    ></script>
+  </body>
+</html>
